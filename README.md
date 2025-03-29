@@ -1,4 +1,4 @@
- ---
+---
 
 # 🤖 Chatbot  
 
@@ -67,33 +67,42 @@ Then type a message, and the bot will classify it as **"Related"** or **"Not Rel
 ---
 
 ## 📂 Project Structure  
+
 ```
 📦 chatbot
- ┣ 📜 main.py               # GUI Chatbot with API Integration
- ┣ 📜 use_model.py          # CLI-based Classification using ML Model
- ┣ 📜 model.pkl             # Pretrained Model for Classification
- ┣ 📜 vectorizer.pkl        # Text Vectorizer for NLP Processing
- ┣ 📜 .env.example          # Example file for environment variables
- ┣ 📜 requirements.txt      # List of Dependencies
- ┣ 📜 README.md             # Project Documentation
- ┗ 📜 .gitignore            # Ignore .env and unnecessary files
+ ┣ 📜 main.py                 # GUI Chatbot with API Integration
+ ┣ 📜 use_model.py            # CLI-based Classification using ML Model
+ ┣ 📜 binaryclassification.ipynb  # Jupyter Notebook for training the classification model
+ ┣ 📜 mental_health.csv        # Dataset used for training the classification model
+ ┣ 📜 model.pkl               # Trained Machine Learning model for message classification
+ ┣ 📜 vectorizer.pkl          # TF-IDF Vectorizer for text preprocessing
+ ┣ 📜 .env.example            # Example file for environment variables
+ ┣ 📜 requirements.txt        # List of dependencies
+ ┣ 📜 README.md               # Project Documentation
+ ┗ 📜 .gitignore              # Ignore .env and unnecessary files
 ```
 
 ---
 
-## 🧠 What Are the `.pkl` Files?  
+## 🧠 What Each File Does  
 
-The `.pkl` (Pickle) files store **pre-trained machine learning models and NLP components**, allowing the chatbot to classify messages efficiently without retraining the model every time.  
+### 🔹 **Core Chatbot Files**  
+- **`main.py`** – Runs the chatbot with a **GUI (Tkinter)** and integrates **Groq API** for AI-generated responses.  
+- **`use_model.py`** – Provides a **command-line interface** to classify messages as **related** or **not related** using the trained model.  
 
-- **`model.pkl` (Message Classification Model)**  
-  - A trained machine learning model that classifies messages as **related** or **not related** to mental health topics.  
-  - Uses **text processing techniques** and a classifier (e.g., Logistic Regression, SVM, etc.).  
-  - Helps determine if the chatbot should provide general or mental health-focused responses.  
+### 🔹 **Machine Learning & Model Training**  
+- **`binaryclassification.ipynb`** – Jupyter Notebook that trains the classification model. This includes **data preprocessing, feature extraction, model training, and evaluation**.  
+- **`mental_health.csv`** – Dataset used to train the classification model. It contains labeled text samples that help the model learn to differentiate between mental health-related and general messages.  
+- **`model.pkl`** – The trained machine learning model that predicts whether a message is **related or not related** to mental health.  
+- **`vectorizer.pkl`** – A **TF-IDF Vectorizer** that converts text into numerical features before classification.  
 
-- **`vectorizer.pkl` (TF-IDF Vectorizer)**  
-  - Converts text messages into numerical features using **TF-IDF (Term Frequency-Inverse Document Frequency)**.  
-  - Ensures that the input text is **properly formatted** before classification.  
-  - This is an essential part of **Natural Language Processing (NLP)** in the chatbot.  
+### 🔹 **Setup & Configuration**  
+- **`.env.example`** – Example file showing how to store your **Groq API key** securely.  
+- **`requirements.txt`** – Contains all the dependencies required to run the chatbot. Install them using:  
+  ```bash
+  pip install -r requirements.txt
+  ```
+- **`.gitignore`** – Ensures sensitive files like `.env` are **not pushed** to GitHub.  
 
 ---
 
