@@ -1,4 +1,4 @@
----
+ ---
 
 # 🤖 Chatbot  
 
@@ -85,7 +85,7 @@ Then type a message, and the bot will classify it as **"Related"** or **"Not Rel
 
 The `.pkl` (Pickle) files store **pre-trained machine learning models and NLP components**, allowing the chatbot to classify messages efficiently without retraining the model every time.  
 
-- **`model.pkl` (Mental Health Classification Model)**  
+- **`model.pkl` (Message Classification Model)**  
   - A trained machine learning model that classifies messages as **related** or **not related** to mental health topics.  
   - Uses **text processing techniques** and a classifier (e.g., Logistic Regression, SVM, etc.).  
   - Helps determine if the chatbot should provide general or mental health-focused responses.  
@@ -94,6 +94,14 @@ The `.pkl` (Pickle) files store **pre-trained machine learning models and NLP co
   - Converts text messages into numerical features using **TF-IDF (Term Frequency-Inverse Document Frequency)**.  
   - Ensures that the input text is **properly formatted** before classification.  
   - This is an essential part of **Natural Language Processing (NLP)** in the chatbot.  
+
+---
+
+## 📊 More About the Model  
+
+To learn more about how the **ML model was trained**, check out my **Kaggle profile**:  
+
+👉 [Kaggle: brrownnn](https://www.kaggle.com/brrownnn)  
 
 ---
 
